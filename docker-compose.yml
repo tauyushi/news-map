@@ -1,0 +1,19 @@
+version: '3'
+
+#環境によってselinuxでパーミッションエラーが出るのでvolumesの最後に:zが必要(Fodora28)
+
+services:
+  php:
+      build:
+        context: .\php
+      container_name: "movies-web"
+      ports:
+        - 80:80
+      volumes:
+        - .\src:/var/www/movies:z
+      links:
+        - redis
+
+  redis:
+      restart: always
+      image: redis
