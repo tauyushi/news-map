@@ -33,7 +33,7 @@ WORKDIR /var/www
 
 RUN rm -rf html
 
-RUN mkdir movies
+RUN mkdir news-map
 
 # PHP's DB setting
 RUN apt-get update \
