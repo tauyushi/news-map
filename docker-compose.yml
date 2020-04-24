@@ -6,11 +6,11 @@ services:
   php:
       build:
         context: .\php
-      container_name: "movies-web"
+      container_name: "news-map"
       ports:
         - 80:80
       volumes:
-        - .\src:/var/www/movies:z
+        - .\src:/var/www/news-map:z
       links:
         - redis
 
